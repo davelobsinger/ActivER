@@ -2,7 +2,6 @@ package com.waitlist.glass.activer;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.media.AudioManager;
 import android.os.Bundle;
 import android.view.View;
@@ -17,7 +16,7 @@ import com.google.android.glass.widget.CardScrollView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StartActivERActivity extends Activity 
+public class PatientInfoActivity extends Activity 
 {
     private List<CardBuilder> mCards;
     private CardScrollView mCardScrollView;
@@ -44,31 +43,23 @@ public class StartActivERActivity extends Activity
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 AudioManager am = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
                 am.playSoundEffect(Sounds.TAP);
-                showPatient();
-
             }
         });
-    }
-    
-    private void showPatient(){
-        Intent intent = new Intent(this, PatientInfoActivity.class);
-        //intent.putExtra(GameResultsActivity.EXTRA_MODEL, getCharadesModel());
-        startActivity(intent);
     }
 	
     private void createCards() {
         mCards = new ArrayList<CardBuilder>();
 
         mCards.add(new CardBuilder(this, CardBuilder.Layout.TEXT)
-                .setText("This card has a footer.")
+                .setText("Main Patient Info")
                 .setFootnote("I'm the footer!"));
 
         mCards.add(new CardBuilder(this, CardBuilder.Layout.TEXT)
-        .setText("This is card 2.")
+        .setText("Secondary Patient Info")
         .setFootnote("I'm the footer!"));
 
         mCards.add(new CardBuilder(this, CardBuilder.Layout.TEXT)
-        .setText("This is card 3.")
+        .setText("Patient History")
         .setFootnote("I'm the footer!"));
     }
 	
