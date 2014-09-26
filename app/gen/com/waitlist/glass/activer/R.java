@@ -33,11 +33,12 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int footer=0x7f080003;
-        public static final int footer_container=0x7f080002;
-        public static final int left_column=0x7f080001;
-        public static final int timestamp=0x7f080004;
-        public static final int tip_tap_for_patients=0x7f080000;
+        public static final int footer=0x7f080004;
+        public static final int footer_container=0x7f080003;
+        public static final int left_column=0x7f080002;
+        public static final int patientName=0x7f080000;
+        public static final int timestamp=0x7f080005;
+        public static final int tip_tap_for_patients=0x7f080001;
     }
     public static final class layout {
         public static final int activity_start_activ_er=0x7f030000;

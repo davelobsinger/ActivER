@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.google.android.glass.widget.CardScrollAdapter;
 
@@ -59,6 +60,8 @@ import com.google.android.glass.widget.CardScrollAdapter;
 	        .from(mContext)
 	        .inflate(R.layout.activity_start_activ_er, parent, false);
 			// TODO: Fill layout with patient info.
+			final TextView nameView = (TextView) itemLayout.findViewById(R.id.patientName);
+			nameView.setText(patientItem.getName());
 			
 			return itemLayout;
 		}

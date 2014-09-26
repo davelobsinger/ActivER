@@ -28,9 +28,15 @@ public class PatientInfoActivity extends Activity
         
         mAdapter = new PatientListAdapter(getApplicationContext());
         // TODO: Create Patient objects to fill here.
-        mAdapter.add();
-        mAdapter.add();
-        mAdapter.add();
+        Patient dave = new Patient();
+        dave.setName("David Lobsinger");
+        mAdapter.add(dave);
+        
+        Patient sarah = new Patient();
+        sarah.setName("Sarah Core");
+        mAdapter.add(sarah);
+        //mAdapter.add();
+        //mAdapter.add();
         
         Log.d("PATIENT ACTIVITY","CardScrollAdapter Created");
         
