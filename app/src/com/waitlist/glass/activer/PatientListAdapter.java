@@ -17,7 +17,7 @@ import com.google.android.glass.widget.CardScrollAdapter;
 		
 		private final Context mContext;
 		
-		private final List<RelativeLayout> mViews = new ArrayList<RelativeLayout>();
+		private final List<Patient> mPatients = new ArrayList<Patient>();
 		
 		public PatientListAdapter(Context context){
 			
@@ -25,24 +25,23 @@ import com.google.android.glass.widget.CardScrollAdapter;
 			
 		}
 		
-		public void add(){
-			RelativeLayout card1 = new RelativeLayout(mContext);
-			mViews.add(card1);
+		public void add(Patient item){
+			mPatients.add(item);
 		}
 		
 		@Override
 		public int getPosition(Object item) {
-			return mViews.indexOf(item);
+			return mPatients.indexOf(item);
 		}
  
 		@Override
 		public int getCount() {
-			return mViews.size();
+			return mPatients.size();
 		}
  
 		@Override
 		public Object getItem(int position) {
-			return mViews.get(position);
+			return mPatients.get(position);
 		}
 
 
@@ -54,9 +53,12 @@ import com.google.android.glass.widget.CardScrollAdapter;
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
 			
+			final Patient patientItem = mPatients.get(position);
+			// TODO: Change to a new layout.
 			RelativeLayout itemLayout = (RelativeLayout) LayoutInflater
 	        .from(mContext)
 	        .inflate(R.layout.activity_start_activ_er, parent, false);
+			// TODO: Fill layout with patient info.
 			
 			return itemLayout;
 		}
