@@ -39,6 +39,7 @@ public final class R {
         public static final int allergies_list=0x7f0a0011;
         public static final int allergy_container=0x7f0a000e;
         public static final int blood_pressure=0x7f0a0014;
+        public static final int blood_pressure_container=0x7f0a0012;
         public static final int body_layout=0x7f0a0009;
         public static final int date_of_birth=0x7f0a0016;
         public static final int dob_container=0x7f0a000f;
@@ -51,7 +52,6 @@ public final class R {
         public static final int patient_issue=0x7f0a000d;
         public static final int patient_name=0x7f0a000a;
         public static final int pizza=0x7f0a0017;
-        public static final int relativeLayout1=0x7f0a0012;
         public static final int textView1=0x7f0a0007;
         public static final int textView2=0x7f0a0010;
         public static final int textView3=0x7f0a0013;

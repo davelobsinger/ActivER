@@ -8,6 +8,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -57,11 +58,11 @@ import com.google.android.glass.widget.CardScrollAdapter;
 			
 			final Patient patientItem = mPatients.get(position);
 			// TODO: Change to a new layout.
-			RelativeLayout itemLayout = (RelativeLayout) LayoutInflater
+			FrameLayout itemLayout = (FrameLayout) LayoutInflater
 	        .from(mContext)
-	        .inflate(R.layout.activity_start_activ_er, parent, false);
+	        .inflate(R.layout.list_patient_layout, parent, false);
 			// TODO: Fill layout with patient info.
-			final TextView nameView = (TextView) itemLayout.findViewById(R.id.patientName);
+			final TextView nameView = (TextView) itemLayout.findViewById(R.id.patient_name);
 			nameView.setText(patientItem.getName());
 			
 			return itemLayout;

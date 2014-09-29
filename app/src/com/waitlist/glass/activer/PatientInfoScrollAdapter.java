@@ -66,8 +66,12 @@ import com.google.android.glass.widget.CardScrollAdapter;
 			case MainInfo: 
 				convertView = mInflater.inflate(R.layout.patient_main_info, parent);
 				TextView nameView = (TextView) convertView.findViewById(R.id.patient_name);
-				// TODO: change this to patient name.
 				nameView.setText(mPatient.getName());
+				TextView dobView = (TextView) convertView.findViewById(R.id.date_of_birth);
+				dobView.setText(Patient.FORMAT.format(mPatient.getDOB()));
+				
+				TextView allergyView = (TextView) convertView.findViewById(R.id.allergies_list);
+				allergyView.setText(mPatient.getAllergies());
 				// TODO: Add card info.
 				break;
 			
