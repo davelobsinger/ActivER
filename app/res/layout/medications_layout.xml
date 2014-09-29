@@ -13,6 +13,26 @@
 
         <!-- Put widgets for the left column inside this RelativeLayout. -->
 
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/imageView1"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:text="Current Medications"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="74dp"
+            android:src="@drawable/ic_launcher" />
+
     </RelativeLayout>
 
     <LinearLayout

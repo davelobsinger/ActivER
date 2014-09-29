@@ -22,6 +22,7 @@ public class  Patient{
 			*/
 			
 	};
+
 	
 	public final static String PATIENTNAME = "patientName";
 	public final static String DOB = "dateofBirth";
@@ -32,6 +33,23 @@ public class  Patient{
 	private String mName = new String();
 	private Triage mTriage = Triage.GRN;
 	private String mTimeAdmitted = new String();
+	
+	Patient(String name){
+		mName = name;
+	}
+	
+	Patient(Intent intent) {
+
+		mName = intent.getStringExtra(Patient.PATIENTNAME);
+		//mPriority = Priority.valueOf(intent.getStringExtra(ToDoItem.PRIORITY));
+		//mStatus = Status.valueOf(intent.getStringExtra(ToDoItem.STATUS));
+
+		/*try {
+			mDate = ToDoItem.FORMAT.parse(intent.getStringExtra(ToDoItem.DATE));
+		} catch (ParseException e) {
+			mDate = new Date();
+		}*/
+	}
 	
 	public String getName() {
 		return mName;

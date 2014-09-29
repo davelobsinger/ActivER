@@ -3,6 +3,7 @@ package com.waitlist.glass.activer;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -41,7 +42,7 @@ import com.google.android.glass.widget.CardScrollAdapter;
 		}
  
 		@Override
-		public Object getItem(int position) {
+		public Patient getItem(int position) {
 			return mPatients.get(position);
 		}
 

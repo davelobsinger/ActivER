@@ -10,44 +10,73 @@ package com.waitlist.glass.activer;
 public final class R {
     public static final class attr {
     }
+    public static final class color {
+        public static final int red=0x7f050000;
+    }
     public static final class dimen {
         /**  The maximum height of the body content inside a card. 
          */
-        public static final int glass_card_body_height=0x7f050003;
+        public static final int glass_card_body_height=0x7f060003;
         /**  The recommended margin between the bottom of the card and the footer. This is
          an adjusted value so that the baseline of the text in the footer sits 40px
          from the bottom of the card, matching the other margins. 
          */
-        public static final int glass_card_footer_margin=0x7f050001;
+        public static final int glass_card_footer_margin=0x7f060001;
         /**  The width of the left column in the two-column layout. 
          */
-        public static final int glass_card_left_column_width=0x7f050004;
+        public static final int glass_card_left_column_width=0x7f060004;
         /**  The recommended margin for the top, left, and right edges of a card. 
          */
-        public static final int glass_card_margin=0x7f050000;
+        public static final int glass_card_margin=0x7f060000;
         /**  The recommended margin for the left column of the two-column card. 
          */
-        public static final int glass_card_two_column_margin=0x7f050002;
+        public static final int glass_card_two_column_margin=0x7f060002;
     }
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int footer=0x7f080004;
-        public static final int footer_container=0x7f080003;
-        public static final int left_column=0x7f080002;
-        public static final int patientName=0x7f080000;
-        public static final int timestamp=0x7f080005;
-        public static final int tip_tap_for_patients=0x7f080001;
+        public static final int allergies_list=0x7f0a0011;
+        public static final int allergy_container=0x7f0a000e;
+        public static final int blood_pressure=0x7f0a0014;
+        public static final int body_layout=0x7f0a0009;
+        public static final int date_of_birth=0x7f0a0016;
+        public static final int dob_container=0x7f0a000f;
+        public static final int footer=0x7f0a0004;
+        public static final int footer_container=0x7f0a0003;
+        public static final int imageView1=0x7f0a0006;
+        public static final int layout=0x7f0a0008;
+        public static final int left_column=0x7f0a0002;
+        public static final int patientName=0x7f0a0000;
+        public static final int patient_issue=0x7f0a000d;
+        public static final int patient_name=0x7f0a000a;
+        public static final int pizza=0x7f0a0017;
+        public static final int relativeLayout1=0x7f0a0012;
+        public static final int textView1=0x7f0a0007;
+        public static final int textView2=0x7f0a0010;
+        public static final int textView3=0x7f0a0013;
+        public static final int textView4=0x7f0a0015;
+        public static final int timestamp=0x7f0a0005;
+        public static final int tip_tap_for_patients=0x7f0a0001;
+        public static final int triage_container=0x7f0a000b;
+        public static final int triage_level=0x7f0a000c;
     }
     public static final class layout {
         public static final int activity_start_activ_er=0x7f030000;
         public static final int card_left_layout=0x7f030001;
+        public static final int history_layout=0x7f030002;
+        public static final int list_patient_layout=0x7f030003;
+        public static final int medications_layout=0x7f030004;
+        public static final int notes_layout=0x7f030005;
+        public static final int patient_main_info=0x7f030006;
+    }
+    public static final class menu {
+        public static final int patient_menu=0x7f090000;
     }
     public static final class string {
-        public static final int app_name=0x7f060000;
-        public static final int hello_world=0x7f060001;
-        public static final int tip_tap_for_patients=0x7f060002;
+        public static final int app_name=0x7f070000;
+        public static final int hello_world=0x7f070001;
+        public static final int tip_tap_for_patients=0x7f070002;
     }
     public static final class style {
         /** 
@@ -71,11 +100,11 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f070000;
+        public static final int AppBaseTheme=0x7f080000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f070001;
+        public static final int AppTheme=0x7f080001;
     }
     public static final class xml {
         public static final int voice_trigger=0x7f040000;
