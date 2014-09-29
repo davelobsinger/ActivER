@@ -31,6 +31,8 @@ public class  Patient{
 	public final static String DOB = "dateofBirth";
 	public final static String BLOODPRESSURE = "bloodPressure";
 	public final static String TRIAGE = "triage";
+	public final static String ALLERGIES = "allegies";
+	public final static String MEDS = "meds";
 	public final static String TIMEADMITTED = "timeAdmitted";
 	public final static String REASON = "visitReason";
 	
@@ -51,21 +53,19 @@ public class  Patient{
 	}
 	
 	Patient(Intent intent) {
-
+		// TODO: Finish unpackaging intent and creating patient object.
 		mName = intent.getStringExtra(Patient.PATIENTNAME);
+		mTriage = Triage.valueOf(intent.getStringExtra(Patient.TRIAGE));
+		mBloodPressure = intent.getStringExtra(Patient.BLOODPRESSURE);
+		mIssue = intent.getStringExtra(Patient.REASON);
+		mAllergies = intent.getStringExtra(Patient.ALLERGIES);
+		mMeds = intent.getStringExtra(Patient.MEDS);
+		
 		try{
 			mDOB = FORMAT.parse(intent.getStringExtra(Patient.DOB));
 		} catch (java.text.ParseException e) {
 			mDOB = new Date();
 		}
-		//mPriority = Priority.valueOf(intent.getStringExtra(ToDoItem.PRIORITY));
-		//mStatus = Status.valueOf(intent.getStringExtra(ToDoItem.STATUS));
-
-		/*try {
-			mDate = ToDoItem.FORMAT.parse(intent.getStringExtra(ToDoItem.DATE));
-		} catch (ParseException e) {
-			mDate = new Date();
-		}*/
 	}
 	
 	public String getName() {
@@ -133,11 +133,14 @@ public class  Patient{
 	}
 
 	public static void packageIntent(Intent intent, String name,
-			Triage triage, String allergies, String date, String bp) {
+			Triage triage, String issue, String allergies, String date, String bp, String meds) {
 
 		intent.putExtra(Patient.PATIENTNAME, name);
 		intent.putExtra(Patient.TRIAGE, triage.toString());
-		intent.putExtra(Patient.BLOODPRESSURE, bp) ;
+		intent.putExtra(Patient.BLOODPRESSURE, bp);
+		intent.putExtra(Patient.REASON, issue);
+		intent.putExtra(Patient.ALLERGIES, allergies);
+		intent.putExtra(Patient.MEDS, meds);
 		intent.putExtra(Patient.DOB, date);
 	
 	}

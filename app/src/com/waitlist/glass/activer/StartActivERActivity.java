@@ -63,8 +63,11 @@ public class StartActivERActivity extends Activity
     private void showPatient(){
         Intent intent = new Intent(this, PatientInfoActivity.class);
         final Patient selectedPatient = mAdapter.getItem(mCardScrollView.getSelectedItemPosition());
-        Patient.packageIntent(intent, selectedPatient.getName(), selectedPatient.getTriage()
-        		, selectedPatient.getAllergies(), Patient.FORMAT.format(selectedPatient.getDOB()),selectedPatient.getBP());
+        
+        Patient.packageIntent(intent, selectedPatient.getName(), selectedPatient.getTriage(), 
+        		selectedPatient.getIssue(), selectedPatient.getAllergies(), Patient.FORMAT.format(selectedPatient.getDOB()),
+        		selectedPatient.getBP(), selectedPatient.getMeds());
+        
         final String name = selectedPatient.getName();
         intent.putExtra("patientName", name);
         startActivity(intent);

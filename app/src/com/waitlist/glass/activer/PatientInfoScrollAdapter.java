@@ -65,13 +65,26 @@ import com.google.android.glass.widget.CardScrollAdapter;
 			switch (mCards.get(position)) {
 			case MainInfo: 
 				convertView = mInflater.inflate(R.layout.patient_main_info, parent);
+				// Add patient info to the card
 				TextView nameView = (TextView) convertView.findViewById(R.id.patient_name);
 				nameView.setText(mPatient.getName());
 				TextView dobView = (TextView) convertView.findViewById(R.id.date_of_birth);
 				dobView.setText(Patient.FORMAT.format(mPatient.getDOB()));
 				
-				TextView allergyView = (TextView) convertView.findViewById(R.id.allergies_list);
-				allergyView.setText(mPatient.getAllergies());
+				// Put allergies on info card, otherwise make the allergies section invisible.
+				final String mAllergies = mPatient.getAllergies();
+				if (mAllergies.length() == 0){
+					TextView allergyView = (TextView) convertView.findViewById(R.id.allergy_container);
+					allergyView.setVisibility(View.GONE);
+				}else{
+					TextView allergyView = (TextView) convertView.findViewById(R.id.allergies_list);
+					allergyView.setText(mPatient.getAllergies());
+				}
+				TextView bpView = (TextView) convertView.findViewById(R.id.blood_pressure);
+				bpView.setText(mPatient.getBP());
+				
+				TextView triageView = (TextView) convertView.findViewById(R.id.triage_level);
+				triageView.setText(mPatient.getTriage().toString());
 				// TODO: Add card info.
 				break;
 			
