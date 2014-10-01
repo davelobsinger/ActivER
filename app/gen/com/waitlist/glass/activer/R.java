@@ -33,7 +33,9 @@ public final class R {
         public static final int glass_card_two_column_margin=0x7f060002;
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
+        public static final int ic_hist=0x7f020000;
+        public static final int ic_launcher=0x7f020001;
+        public static final int ic_pill=0x7f020002;
     }
     public static final class id {
         public static final int allergies_list=0x7f0a0013;
