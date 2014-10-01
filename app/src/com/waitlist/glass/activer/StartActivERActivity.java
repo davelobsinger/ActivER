@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.media.AudioManager;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import com.waitlist.glass.activer.Patient.Triage;
@@ -26,26 +25,75 @@ public class StartActivERActivity extends Activity
         mCardScrollView = new CardScrollView(this);
         
         mAdapter = new PatientListAdapter(getApplicationContext());
-        // TODO: Create Patient objects to fill here.
-        Patient dave = new Patient("David Lobsinger");
-        dave.setDOB("1991-10-08");
-        dave.setBP("180/15");
-        dave.setAllergies("Morphine");
-        dave.setMeds("Concerta");
-        dave.setTriage(Triage.YEL);
-        dave.setIssue("Broken Heart");
-        mAdapter.add(dave);
         
-        Patient sarah = new Patient("Sarah Core");
-        mAdapter.add(sarah);
-        //mAdapter.add();
-        //mAdapter.add();
+        createPatients();
+        //Intent serviceIntent =new Intent(this, EmergService.class);
+        //startService(serviceIntent);
 
         mCardScrollView.setAdapter(mAdapter);
         mCardScrollView.activate();
         setupClickListener();
         setContentView(mCardScrollView);
 	}
+	
+	private void createPatients() {
+        Patient p1 = new Patient("Jenna Borda");
+        p1.setDOB("1976-02-01");
+        p1.setBP("116/73");
+        p1.setAllergies("");
+        p1.setMeds("Celebrex");
+        p1.setTriage(Triage.GRN);
+        p1.setIssue("Sore throat, wheezing, shortness of breath");
+        mAdapter.add(p1);
+        
+        Patient p2 = new Patient("Desmond Ebeling");
+        p2.setDOB("1985-10-15");
+        p2.setBP("131/78");
+        p2.setAllergies("Penicillin");
+        p2.setMeds("None");
+        p2.setTriage(Triage.YEL);
+        p2.setIssue("Dislocated shoulder, possible fracture");
+        mAdapter.add(p2);
+        
+        Patient p3 = new Patient("Johnathon Blouin");
+        p3.setDOB("1953-06-08");
+        p3.setBP("143/92");
+        p3.setAllergies("");
+        p3.setMeds("Procardia XL\nAvandia");
+        p3.setTriage(Triage.RED);
+        p3.setIssue("Chest pain, signs of cardiac arrest");
+        p3.setHistory("Hypertension\nCoronary bypass");
+        mAdapter.add(p3);
+        
+        Patient p4 = new Patient("Allison Swinton");
+        p4.setDOB("1959-03-19");
+        p4.setBP("122/83");
+        p4.setAllergies("Insulin");
+        p4.setMeds("Magnesium");
+        p4.setTriage(Triage.GRN);
+        p4.setIssue("Hives on lower back, skin irritation");
+        mAdapter.add(p4);
+        
+        Patient p5 = new Patient("Krista Nyberg");
+        p5.setDOB("1993-08-30");
+        p5.setBP("118/79");
+        p5.setAllergies("");
+        p5.setMeds("Concerta\nYasmin");
+        p5.setTriage(Triage.YEL);
+        p5.setIssue("Severe abdonimal pain");
+        mAdapter.add(p5);
+        
+        Patient p6 = new Patient("Hunter Nyles");
+        p6.setDOB("1989-12-23");
+        p6.setBP("127/83");
+        p6.setAllergies("");
+        p6.setMeds("Possible opioid use");
+        p6.setTriage(Triage.YEL);
+        p6.setIssue("Nausea, decreased consciousness");
+        mAdapter.add(p6);
+	}
+	
+	
 	
     private void setupClickListener() {
         mCardScrollView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -66,10 +114,8 @@ public class StartActivERActivity extends Activity
         
         Patient.packageIntent(intent, selectedPatient.getName(), selectedPatient.getTriage(), 
         		selectedPatient.getIssue(), selectedPatient.getAllergies(), Patient.FORMAT.format(selectedPatient.getDOB()),
-        		selectedPatient.getBP(), selectedPatient.getMeds());
+        		selectedPatient.getBP(), selectedPatient.getMeds(), selectedPatient.getHistory(), selectedPatient.getNotes());
         
-        final String name = selectedPatient.getName();
-        intent.putExtra("patientName", name);
         startActivity(intent);
     }
 	

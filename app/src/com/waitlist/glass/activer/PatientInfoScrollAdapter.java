@@ -7,6 +7,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.google.android.glass.widget.CardScrollAdapter;
@@ -15,7 +16,7 @@ import com.google.android.glass.widget.CardScrollAdapter;
 
 	public class PatientInfoScrollAdapter extends CardScrollAdapter {
 		public enum Card {
-			MainInfo, Medications	
+			MainInfo, Medications, History, Notes	
 		};
 		private final Context mContext;
 		private LayoutInflater mInflater;
@@ -35,9 +36,16 @@ import com.google.android.glass.widget.CardScrollAdapter;
 			
 			mCards.add(Card.MainInfo);
 			mCards.add(Card.Medications);
+			mCards.add(Card.History);
+			mCards.add(Card.Notes);
 			
 		}
 		
+		public void writeNote(String voiceText){
+			final String currentNotes = mPatient.getNotes();
+			mPatient.setNotes(currentNotes + "\n\n" +voiceText);
+			notifyDataSetChanged();
+		}
 		@Override
 		public int getPosition(Object item) {
 			return mCards.indexOf(item);
@@ -74,7 +82,7 @@ import com.google.android.glass.widget.CardScrollAdapter;
 				// Put allergies on info card, otherwise make the allergies section invisible.
 				final String mAllergies = mPatient.getAllergies();
 				if (mAllergies.length() == 0){
-					TextView allergyView = (TextView) convertView.findViewById(R.id.allergy_container);
+					RelativeLayout allergyView = (RelativeLayout) convertView.findViewById(R.id.allergy_container);
 					allergyView.setVisibility(View.GONE);
 				}else{
 					TextView allergyView = (TextView) convertView.findViewById(R.id.allergies_list);
@@ -85,12 +93,27 @@ import com.google.android.glass.widget.CardScrollAdapter;
 				
 				TextView triageView = (TextView) convertView.findViewById(R.id.triage_level);
 				triageView.setText(mPatient.getTriage().toString());
-				// TODO: Add card info.
+				
+				TextView issueView = (TextView) convertView.findViewById(R.id.patient_issue);
+				issueView.setText(mPatient.getIssue());
 				break;
 			
 			case Medications: 
 				convertView = mInflater.inflate(R.layout.medications_layout, parent);
-				// TODO: Add card info.
+				TextView medView = (TextView) convertView.findViewById(R.id.meds);
+				medView.setText(mPatient.getMeds());
+				break;
+				
+			case History: 
+				convertView = mInflater.inflate(R.layout.history_layout, parent);
+				TextView histView = (TextView) convertView.findViewById(R.id.history);
+				histView.setText(mPatient.getHistory());
+				break;
+				
+			case Notes: 
+				convertView = mInflater.inflate(R.layout.notes_layout, parent);
+				TextView noteView = (TextView) convertView.findViewById(R.id.notes);
+				noteView.setText(mPatient.getNotes());
 				break;
 			}
 				

@@ -35,7 +35,7 @@
             android:visibility="visible" >
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/meds"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Allergies: "
@@ -47,7 +47,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:layout_toRightOf="@+id/textView2"
+                android:layout_toRightOf="@+id/meds"
                 android:text="Panicillin"
                 android:textAppearance="?android:attr/textAppearanceSmall" />
         </RelativeLayout>
@@ -128,6 +128,33 @@
                 android:layout_toRightOf="@+id/textView4"
                 android:text="1991-10-07"
                 android:textAppearance="?android:attr/textAppearanceSmall" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/issue_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/triage_container" >
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:text="Issue: "
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <TextView
+                android:id="@+id/patient_issue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/textView2"
+                android:text="Small Text"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
         </RelativeLayout>
 
     </RelativeLayout>

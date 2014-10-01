@@ -3,13 +3,12 @@ package com.waitlist.glass.activer;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.annotation.SuppressLint;
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.google.android.glass.widget.CardScrollAdapter;
@@ -64,6 +63,12 @@ import com.google.android.glass.widget.CardScrollAdapter;
 			// TODO: Fill layout with patient info.
 			final TextView nameView = (TextView) itemLayout.findViewById(R.id.patient_name);
 			nameView.setText(patientItem.getName());
+			
+			TextView triageView = (TextView) itemLayout.findViewById(R.id.triage_level);
+			triageView.setText(patientItem.getTriage().toString());
+			
+			TextView issueView = (TextView) itemLayout.findViewById(R.id.patient_issue);
+			issueView.setText(patientItem.getIssue());
 			
 			return itemLayout;
 		}

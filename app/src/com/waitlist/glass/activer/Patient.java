@@ -35,6 +35,8 @@ public class  Patient{
 	public final static String MEDS = "meds";
 	public final static String TIMEADMITTED = "timeAdmitted";
 	public final static String REASON = "visitReason";
+	public final static String HISTORY = "history";
+	public final static String NOTES = "notes";
 	
 	public final static SimpleDateFormat FORMAT = new SimpleDateFormat(
 			"yyyy-MM-dd", Locale.US);
@@ -46,7 +48,8 @@ public class  Patient{
 	private String mBloodPressure= new String();
 	private String mAllergies = new String();
 	private String mMeds = new String();
-	private String mTimeAdmitted = new String();
+	private String mHistory = new String();
+	private String mNotes = new String();
 	
 	Patient(String name){
 		mName = name;
@@ -60,6 +63,8 @@ public class  Patient{
 		mIssue = intent.getStringExtra(Patient.REASON);
 		mAllergies = intent.getStringExtra(Patient.ALLERGIES);
 		mMeds = intent.getStringExtra(Patient.MEDS);
+		mHistory = intent.getStringExtra(Patient.HISTORY);
+		mNotes = intent.getStringExtra(Patient.NOTES);
 		
 		try{
 			mDOB = FORMAT.parse(intent.getStringExtra(Patient.DOB));
@@ -131,9 +136,25 @@ public class  Patient{
 	public String getMeds(){
 		return mMeds;
 	}
-
+	
+	public void setHistory(String history){
+		mHistory = history;
+	}
+	
+	public String getHistory(){
+		return mHistory;
+	}
+	
+	public void setNotes(String note){
+		mNotes = note;
+	}
+	
+	public String getNotes(){
+		return mNotes;
+	}
+	
 	public static void packageIntent(Intent intent, String name,
-			Triage triage, String issue, String allergies, String date, String bp, String meds) {
+			Triage triage, String issue, String allergies, String date, String bp, String meds, String history, String notes) {
 
 		intent.putExtra(Patient.PATIENTNAME, name);
 		intent.putExtra(Patient.TRIAGE, triage.toString());
@@ -142,6 +163,8 @@ public class  Patient{
 		intent.putExtra(Patient.ALLERGIES, allergies);
 		intent.putExtra(Patient.MEDS, meds);
 		intent.putExtra(Patient.DOB, date);
+		intent.putExtra(Patient.HISTORY, history);
+		intent.putExtra(Patient.NOTES, notes);
 	
 	}
 	

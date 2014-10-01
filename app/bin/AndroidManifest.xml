@@ -33,6 +33,8 @@
         
         <activity android:name=".PatientInfoActivity" />
         
+        <service android:name=".EmergService" />
+        
     </application>
 
 </manifest>

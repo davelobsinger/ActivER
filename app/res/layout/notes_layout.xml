@@ -27,8 +27,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_above="@+id/imageView1"
-            android:layout_alignLeft="@+id/imageView1"
-            android:layout_marginBottom="29dp"
+            android:layout_alignRight="@+id/imageView1"
+            android:layout_marginBottom="23dp"
             android:gravity="center"
             android:text="Notes"
             android:textAppearance="?android:attr/textAppearanceMedium" />
@@ -48,6 +48,13 @@
         >
 
         <!-- Put widgets for the right column inside this RelativeLayout. -->
+
+        <TextView
+            android:id="@+id/notes"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Medium Text"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
 
     </LinearLayout>
 

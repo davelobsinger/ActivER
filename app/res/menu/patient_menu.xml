@@ -17,9 +17,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/pizza"
+        android:id="@+id/sch_xray"
         android:icon="@drawable/ic_launcher"
-        android:title="Do a Pizza!"
+        android:title="Schedule X-Ray"
+        />
+    
+    <item
+        android:id="@+id/sch_mri"
+        android:icon="@drawable/ic_launcher"
+        android:title="Schedule MRI"
         />
 
 </menu>

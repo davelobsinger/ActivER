@@ -49,6 +49,13 @@
 
         <!-- Put widgets for the right column inside this RelativeLayout. -->
 
+        <TextView
+            android:id="@+id/meds"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Medium Text"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
     </LinearLayout>
 
     <LinearLayout

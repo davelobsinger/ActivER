@@ -36,30 +36,35 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int allergies_list=0x7f0a0011;
-        public static final int allergy_container=0x7f0a000e;
-        public static final int blood_pressure=0x7f0a0014;
-        public static final int blood_pressure_container=0x7f0a0012;
-        public static final int body_layout=0x7f0a0009;
-        public static final int date_of_birth=0x7f0a0016;
-        public static final int dob_container=0x7f0a000f;
+        public static final int allergies_list=0x7f0a0013;
+        public static final int allergy_container=0x7f0a0011;
+        public static final int blood_pressure=0x7f0a0016;
+        public static final int blood_pressure_container=0x7f0a0014;
+        public static final int body_layout=0x7f0a000a;
+        public static final int date_of_birth=0x7f0a0018;
+        public static final int dob_container=0x7f0a0012;
         public static final int footer=0x7f0a0004;
         public static final int footer_container=0x7f0a0003;
+        public static final int history=0x7f0a0008;
         public static final int imageView1=0x7f0a0006;
-        public static final int layout=0x7f0a0008;
+        public static final int issue_container=0x7f0a0019;
+        public static final int layout=0x7f0a0009;
         public static final int left_column=0x7f0a0002;
+        public static final int meds=0x7f0a000f;
+        public static final int notes=0x7f0a0010;
         public static final int patientName=0x7f0a0000;
-        public static final int patient_issue=0x7f0a000d;
-        public static final int patient_name=0x7f0a000a;
-        public static final int pizza=0x7f0a0017;
+        public static final int patient_issue=0x7f0a000e;
+        public static final int patient_name=0x7f0a000b;
+        public static final int sch_mri=0x7f0a001c;
+        public static final int sch_xray=0x7f0a001b;
         public static final int textView1=0x7f0a0007;
-        public static final int textView2=0x7f0a0010;
-        public static final int textView3=0x7f0a0013;
-        public static final int textView4=0x7f0a0015;
+        public static final int textView2=0x7f0a001a;
+        public static final int textView3=0x7f0a0015;
+        public static final int textView4=0x7f0a0017;
         public static final int timestamp=0x7f0a0005;
         public static final int tip_tap_for_patients=0x7f0a0001;
-        public static final int triage_container=0x7f0a000b;
-        public static final int triage_level=0x7f0a000c;
+        public static final int triage_container=0x7f0a000c;
+        public static final int triage_level=0x7f0a000d;
     }
     public static final class layout {
         public static final int activity_start_activ_er=0x7f030000;
