@@ -37,25 +37,7 @@ public class StartActivERActivity extends Activity
 	}
 	
 	private void createPatients() {
-        Patient p1 = new Patient("Jenna Borda");
-        p1.setDOB("1976-02-01");
-        p1.setBP("116/73");
-        p1.setAllergies("");
-        p1.setMeds("Celebrex");
-        p1.setTriage(Triage.GRN);
-        p1.setIssue("Sore throat, wheezing, shortness of breath");
-        mAdapter.add(p1);
-        
-        Patient p2 = new Patient("Desmond Ebeling");
-        p2.setDOB("1985-10-15");
-        p2.setBP("131/78");
-        p2.setAllergies("Penicillin");
-        p2.setMeds("None");
-        p2.setTriage(Triage.YEL);
-        p2.setIssue("Dislocated shoulder, possible fracture");
-        mAdapter.add(p2);
-        
-        Patient p3 = new Patient("Johnathon Blouin");
+		Patient p3 = new Patient("Johnathon Blouin");
         p3.setDOB("1953-06-08");
         p3.setBP("143/92");
         p3.setAllergies("");
@@ -65,14 +47,15 @@ public class StartActivERActivity extends Activity
         p3.setHistory("Hypertension\nCoronary bypass");
         mAdapter.add(p3);
         
-        Patient p4 = new Patient("Allison Swinton");
-        p4.setDOB("1959-03-19");
-        p4.setBP("122/83");
-        p4.setAllergies("Insulin");
-        p4.setMeds("Magnesium");
-        p4.setTriage(Triage.GRN);
-        p4.setIssue("Hives on lower back, skin irritation");
-        mAdapter.add(p4);
+        Patient p2 = new Patient("Desmond Ebeling");
+        p2.setDOB("1985-10-15");
+        p2.setBP("131/78");
+        p2.setAllergies("Penicillin");
+        p2.setMeds("None");
+        p2.setTriage(Triage.YEL);
+        p2.setIssue("Dislocated shoulder, possible fracture");
+        p2.setHistory("Strep Throat\nConcussion");
+        mAdapter.add(p2);
         
         Patient p5 = new Patient("Krista Nyberg");
         p5.setDOB("1993-08-30");
@@ -81,6 +64,7 @@ public class StartActivERActivity extends Activity
         p5.setMeds("Concerta\nYasmin");
         p5.setTriage(Triage.YEL);
         p5.setIssue("Severe abdonimal pain");
+        p5.setHistory("Alcohol Poisoning\n");
         mAdapter.add(p5);
         
         Patient p6 = new Patient("Hunter Nyles");
@@ -90,7 +74,32 @@ public class StartActivERActivity extends Activity
         p6.setMeds("Possible opioid use");
         p6.setTriage(Triage.YEL);
         p6.setIssue("Nausea, decreased consciousness");
+        p6.setHistory("Narcotics use\nHepatitis");
         mAdapter.add(p6);
+        
+        Patient p1 = new Patient("Jenna Borda");
+        p1.setDOB("1976-02-01");
+        p1.setBP("116/73");
+        p1.setAllergies("");
+        p1.setMeds("Celebrex");
+        p1.setTriage(Triage.GRN);
+        p1.setIssue("Sore throat, wheezing, shortness of breath");
+        p1.setHistory("Angina\nAsthma");
+        mAdapter.add(p1);
+        
+          
+              
+        Patient p4 = new Patient("Allison Swinton");
+        p4.setDOB("1959-03-19");
+        p4.setBP("122/83");
+        p4.setAllergies("Insulin");
+        p4.setMeds("Magnesium");
+        p4.setTriage(Triage.GRN);
+        p4.setIssue("Hives on lower back, skin irritation");
+        p4.setHistory("Bladder infection");
+        mAdapter.add(p4);
+        
+        
 	}
 	
 	
